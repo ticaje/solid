@@ -1,0 +1,13 @@
+{
+    "name": "ticaje/solid",
+    "description": "This is just a work around of how to apply S.O.L.I.D principles in PHP",
+    "type": "project",
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Solid\\": "src/"
+        }
+    }
+}

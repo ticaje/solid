@@ -6,7 +6,7 @@ class Mysql implements DatabaseAdapterInterface
 {
     public function fetch(): array
     {
-        // TODO: Implement fetch() method.
+        return [];
     }
 
     public function update(string $table, array $data): void

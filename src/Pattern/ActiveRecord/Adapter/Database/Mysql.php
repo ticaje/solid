@@ -1,7 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace Solid\Pattern\ActiveRecord\Adapter\Database;
 
+/**
+ * Class Mysql
+ * @package Solid\Pattern\ActiveRecord\Adapter\Database
+ */
 class Mysql implements DatabaseAdapterInterface
 {
     public function fetch(): array

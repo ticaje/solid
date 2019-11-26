@@ -36,4 +36,13 @@ class UserTest extends BaseTest
         $user->setEmail('pepe@gmail.com');
         $this->assertInstanceOf(UserInterface::class, $this->userRepository->insert($user), 'Return a User Model when creating it');
     }
+
+    public function testUpdate()
+    {
+        $user = new UserDto();
+        $user->setId(2);
+        $user->setName('Pepito');
+        $user->setEmail('pepe@gmail.com');
+        $this->assertNull($this->userRepository->update($user), 'Returns void when updating an user');
+    }
 }

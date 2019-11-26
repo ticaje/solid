@@ -18,7 +18,7 @@ interface PersistenceInterface
      * @param string $table
      * @param array $data
      */
-    public function insert(string $table, array $data): void;
+    public function persist(string $table, array $data): void;
 
     /**
      * @param string $table

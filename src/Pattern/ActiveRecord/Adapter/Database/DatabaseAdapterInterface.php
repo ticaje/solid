@@ -16,10 +16,4 @@ interface DatabaseAdapterInterface extends PersistenceInterface
      * @param array $constraint
      */
     public function select(string $table, array $constraint): void;
-
-    /**
-     * @param string $table
-     * @param array $data
-     */
-    public function update(string $table, array $data): void;
 }

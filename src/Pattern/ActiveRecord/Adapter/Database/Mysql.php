@@ -14,17 +14,12 @@ class Mysql implements DatabaseAdapterInterface
         return [];
     }
 
-    public function update(string $table, array $data): void
-    {
-        // TODO: Implement update() method.
-    }
-
     public function delete(string $table, array $constraint): void
     {
         // TODO: Implement delete() method.
     }
 
-    public function insert(string $table, array $data): void
+    public function persist(string $table, array $data): void
     {
         // TODO: Implement insert() method.
     }

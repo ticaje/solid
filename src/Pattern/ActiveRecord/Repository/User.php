@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Solid\Pattern\ActiveRecord\Repository;
 
@@ -52,7 +53,7 @@ class User implements UserRepositoryInterface
             "name" => $user->getName(),
             "email" => $user->getEmail()
         ];
-        $this->db->insert($this->table, $data);
+        $this->db->persist($this->table, $data);
         return $user;
     }
 
@@ -61,14 +62,17 @@ class User implements UserRepositoryInterface
      */
     public function update(DtoUserInterface $user): void
     {
-        $data = [
-            "name" => $user->getName(),
-            "email" => $user->getEmail()
-        ];
-        $constraint = [
-            "id" => "{$this->id}"
-        ];
-        $this->db->update($this->table, $data, $constraint);
+        $persisted = $this->findById($user->getId());
+        if ($persisted){
+            $data = [
+                "name" => $user->getName(),
+                "email" => $user->getEmail()
+            ];
+            $constraint = [
+                "id" => "{$persisted->getId()}"
+            ];
+            $this->db->persist($this->table, $data, $constraint);
+        }
     }
 
     /**
@@ -76,9 +80,12 @@ class User implements UserRepositoryInterface
      */
     public function delete(DtoUserInterface $user): void
     {
-        $constraint = [
-            "id" => "{$user->getId()}"
-        ];
-        $this->db->delete($this->table, $constraint);
+        $persisted = $this->findById($user->getId());
+        if ($persisted) {
+            $constraint = [
+                "id" => "{$user->getId()}"
+            ];
+            $this->db->delete($this->table, $constraint);
+        }
     }
 }

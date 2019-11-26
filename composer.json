@@ -2,6 +2,7 @@
     "name": "ticaje/solid",
     "description": "This is just a work around of how to apply S.O.L.I.D principles in PHP",
     "type": "project",
+    "license": "MIT",
     "require": {
         "php": "^7.1"
     },
@@ -9,5 +10,13 @@
         "psr-4": {
             "Solid\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
     }
 }

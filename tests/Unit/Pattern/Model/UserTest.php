@@ -1,12 +1,14 @@
 <?php
 
-use Solid\Pattern\ActiveRecord\Model\User as UserEntity;
-use Solid\Pattern\ActiveRecord\Adapter\Database\Mysql as DbAdapter;
-use Solid\Application\Request\Request;
-use Solid\Pattern\ActiveRecord\Model\UserInterface;
+namespace Test\Unit\Pattern\Model;
+
+use Solid\Pattern\Model\User as UserEntity;
+use Solid\Pattern\Model\UserInterface;
+use Test\Unit\BaseTest;
 
 /**
  * Class UserTest
+ * @package Test\Unit\Pattern\Model
  */
 class UserTest extends BaseTest
 {
@@ -16,9 +18,7 @@ class UserTest extends BaseTest
     public function setUp()
     {
         parent::setUp();
-        $db = new DbAdapter();
-        $request = new Request();
-        $this->userEntity = new UserEntity($db, $request);
+        $this->userEntity = new UserEntity();
     }
 
     public function testSetter()
@@ -51,18 +51,5 @@ class UserTest extends BaseTest
         $this->userEntity->setName('Pepe');
         $this->assertIsString($this->userEntity->getName());
         $this->assertNotEmpty($this->userEntity->getName());
-    }
-
-    public function testGetGravatar()
-    {
-        $email = 'pepe@gmail.com';
-        $this->userEntity->setEmail($email);
-        $this->assertIsString($this->userEntity->getGravatar());
-        $this->assertContains('gravatar', $this->userEntity->getGravatar());
-    }
-
-    public function testUserValidation()
-    {
-        $this->assertFalse($this->userEntity->validateUserInput());
     }
 }

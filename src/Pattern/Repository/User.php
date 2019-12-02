@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Solid\Pattern\ActiveRecord\Repository;
+namespace Solid\Pattern\Repository;
 
 use Solid\Pattern\ActiveRecord\Adapter\Database\DatabaseAdapterInterface;
 use Solid\Pattern\Model\UserInterface as DtoUserInterface;
 
 /**
  * Class User
- * @package Solid\Pattern\ActiveRecord\Repository
+ * @package Solid\Pattern\Repository
  */
 class User implements UserRepositoryInterface
 {

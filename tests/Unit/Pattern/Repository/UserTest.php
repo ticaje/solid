@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Test\Unit\Pattern\ActiveRecord\Repository;
+namespace Test\Unit\Pattern\Repository;
 
 use Solid\Pattern\ActiveRecord\Adapter\Database\Mysql;
-use Solid\Pattern\ActiveRecord\Repository\User;
+use Solid\Pattern\Repository\User as UserRepository;
 use Solid\Pattern\Model\User as UserDto;
 use Solid\Pattern\Model\UserInterface;
 use Test\Unit\BaseTest;
@@ -20,7 +20,7 @@ class UserTest extends BaseTest
     public function setUp()
     {
         $dbAdapter = new Mysql();
-        $this->userRepository = new User($dbAdapter);
+        $this->userRepository = new UserRepository($dbAdapter);
         parent::setUp();
     }
 

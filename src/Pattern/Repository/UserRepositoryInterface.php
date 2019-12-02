@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Solid\Pattern\ActiveRecord\Repository;
+namespace Solid\Pattern\Repository;
 
 use Solid\Pattern\Model\UserInterface as DtoUserInterface;
 
 /**
  * Interface UserRepositoryInterface
- * @package Solid\Pattern\ActiveRecord\Model
+ * @package Solid\Pattern\Repository
  */
 interface UserRepositoryInterface
 {

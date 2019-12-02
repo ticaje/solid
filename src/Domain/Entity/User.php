@@ -3,24 +3,12 @@ declare(strict_types=1);
 
 namespace Solid\Domain\Entity;
 
-use Solid\Application\Request\RequestInterface;
-
 /**
  * Class User
  * @package Solid\Domain\Entity
  */
 class User implements UserEntity
 {
-    private $request;
-
-    public function __construct
-    (
-        RequestInterface $request
-    )
-    {
-        $this->request = $request;
-    }
-
     /**
      * @inheritDoc
      */
